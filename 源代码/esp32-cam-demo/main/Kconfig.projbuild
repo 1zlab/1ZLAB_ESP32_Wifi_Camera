@@ -1,0 +1,92 @@
+menu "ESP32 Camera Demo Configuration"
+
+choice ESP_WIFI_MODE
+    prompt "AP or STA"
+    default ESP_WIFI_IS_SOFTAP
+    help
+        Whether the esp32 is softAP or station.
+
+config ESP_WIFI_IS_SOFTAP
+    bool "SoftAP"
+config ESP_WIFI_IS_STATION
+    bool "Station"
+endchoice
+
+config ESP_WIFI_MODE_AP
+    bool
+    default y if ESP_WIFI_IS_SOFTAP
+    default n if ESP_WIFI_IS_STATION
+
+config ESP_WIFI_SSID
+    string "WiFi SSID"
+    default "M5Cam"
+    help
+	SSID (network name) for the example to connect to.
+
+config ESP_WIFI_PASSWORD
+    string "WiFi Password"
+    default ""
+    help
+	WiFi password (WPA or WPA2) for the example to use.
+		
+config MAX_STA_CONN
+    int "Max STA conn"
+    default 1
+    help
+	Max number of the STA connects to AP.
+        
+config XCLK_FREQ
+    int "XCLK Frequency"
+    default "20000000"
+    help
+        The XCLK Frequency in Herz.
+        
+menu "Pin Configuration"
+    config D0
+        int "D0"
+        default "17"
+    config D1
+        int "D1"
+        default "35"
+    config D2
+        int "D2"
+        default "34"
+    config D3
+        int "D3"
+        default "5"
+    config D4
+        int "D4"
+        default "39"
+    config D5
+        int "D5"
+        default "18"
+    config D6
+        int "D6"
+        default "36"
+    config D7
+        int "D7"
+        default "19"
+    config XCLK
+        int "XCLK"
+        default "27"
+    config PCLK
+        int "PCLK"
+        default "21"
+    config VSYNC
+        int "VSYNC"
+        default "22"
+    config HREF
+        int "HREF"
+        default "26"
+    config SDA
+        int "SDA"
+        default "25"
+    config SCL
+        int "SCL"
+        default "23"
+    config RESET
+        int "RESET"
+        default "15"
+endmenu
+
+endmenu
