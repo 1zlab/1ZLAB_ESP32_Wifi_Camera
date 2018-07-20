@@ -18,6 +18,15 @@ Ubuntu下配置ESP-IDF的开发环境配置以乐鑫的官方文档(英文)为�
 
 建议搭配此教程与中文文档一起看. 
 
+## 目录
+* [1安装依赖包](#1安装依赖包)
+* [2配置工具链](#2配置工具链)
+* [3查看ESP32开发板的串口号](#3查看ESP32开发板的串口号)
+* [4设备权限问题](#4设备权限问题)
+* [5安装ESP32的库](#5安装ESP32的库)
+* [6设置ESP-IDF的系统环境变量](#6设置ESP-IDF的系统环境变量)
+
+
 ## 1安装依赖包
 
 安装ESP-IDF编译所需要的工具包.
@@ -28,7 +37,7 @@ sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python py
 
 
 
-## 2配置工具链(Toolchain)
+## 2配置工具链
 
 在用户主目录下创建一个文件夹叫`esp` . 
 
@@ -133,7 +142,7 @@ sudo usermod -a -G dialout $USER
 
 
 
-## 5安装ESP32的库(Lib)
+## 5安装ESP32的库
 
 工具链（包括用于编译和构建应用程序的程序）安装完后，你还需要 ESP32 相关的 API/库。API/库在 [ESP-IDF 仓库](https://github.com/espressif/esp-idf) 中。要获取这些 API/库，打开一个终端，进入某个你希望存放 ESP-IDF 的目录，然后 `git clone` 以下指令：
 
@@ -153,3 +162,56 @@ git submodule update --init
 
 
 
+`esp-idf` 就会被下载到`~/esp/esp-idf`文件夹下.
+
+> TODO esp-idf一直下载不下来.
+
+## 6设置ESP-IDF的系统环境变量
+
+> 步骤类似上文给toolchain添加系统环境变量.
+
+打开`~/.bashrc`
+
+```bash
+gedit ~/.bashrc
+```
+
+在`.bashrc`文件末尾追加一行:
+
+```bash
+export IDF_PATH=~/esp/esp-idf
+```
+
+保存并关闭文件.执行下面的语句:
+
+```bash
+source ~/.bashrc
+```
+
+检验一下, 在终端输入: 
+
+```bash
+echo $IDF_PATH
+```
+
+如果得到类似这样的输出:
+
+```
+/home/zr/esp/esp-idf
+```
+
+就说明系统环境变量配置成功.
+
+
+
+## 7结尾
+
+这样我们的开发环境其实就配置好了.
+
+接下来你需要学习的是**如何创建工程并烧录到ESP32开发板上面.**
+
+[官方文档-创建一个工程](https://esp-idf.readthedocs.io/zh_CN/latest/get-started/index.html#get-started-start-project)
+
+> 因为ESP-IDF官方写的已经足够详细了, 所以在这里,不必赘述, 大家看文档就好了.
+
+如何编译ESP-CAM源码的教程,我这里还是赘述了一下, 见文档[编译ESP-CAM的源码](./编译ESP-CAM的源码.md).

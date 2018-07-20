@@ -16,13 +16,10 @@ ESP-CAM(M5CAMERA)的生产商为M5Stack, 他们在原有的开源项目基础上
 
 阿凯编写了相关的文档教程, 方便大家使用ESP-CAM.
 
- 
-
 * [ESP-CAM的简易使用教程-1Z实验室](./文档/ESP-CAM的简易使用.md)
-* [Ubuntu下ESP-CAM固件烧录指南-1Z实验室](./文档/Ubuntu下ESP-CAM固件烧录指南-1Z实验室.md)
+* [Ubuntu下ESP-CAM固件烧录指南-1Z实验室](./文档/Ubuntu下ESP-CAM固件烧录指南.md)
 * [Ubuntu下ESP-IDF 开发环境配置-1Z实验室](./文档/Ubuntu下ESP-IDF开发环境配置.md)
-
-> TODO Ubuntu下ESP-IDF 开发环境配置 部分 未完待续.
+* [修改并编译ESP-CAM的源码](./文档/修改并编译ESP-CAM的源码.md)
 
 ## 固件
 
