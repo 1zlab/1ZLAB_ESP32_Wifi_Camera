@@ -33,13 +33,13 @@ make menuconfig
 1. 方向键盘`上下` 选择`Serial flasher config`
 2. 方向键盘`左右` 选择`Select`
 
-![make-menuconfig-2](/home/zr/Project/esp-cam-tutorial/文档/IMG/make-menuconfig-2.png)
+![make-menuconfig-2](./IMG/make-menuconfig-2.png)
 
 选择`/dev/tty.SLAB_USBtoUART` 默认串口端口. 选择`Select`. 
 
 接下来, 依次`Save`保存配置, 然后退出`Exit`
 
-![make-menuconfig-3](/home/zr/Project/esp-cam-tutorial/文档/IMG/make-menuconfig-3.png)
+![make-menuconfig-3](./IMG/make-menuconfig-3.png)
 
 ## 2修改ESP32的源码
 
